@@ -1,4 +1,4 @@
 #created same hotel booking form 
 using kyvy
 
-#The simpler one
+#The simpler one compared to tkinter 
