@@ -1,0 +1,3 @@
+#Email Automation 
+
+using smtplib
