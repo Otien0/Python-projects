@@ -1,0 +1,20 @@
+Download the FFmpeg-python file;
+python3 -m pip install FFmpeg-python
+
+on the terminal, run this commands:
+ffmpeg -i "name of your video file" -vn output_audio.mp3
+//where: The first command, will use ffmpeg to extract the audio
+//The -i flag, indicates the file name of the input.
+//using the flag -vn that will instruct ffmpeg to disable video recording.
+
+ 
+        //Extracting mp4 vid to ogg
+ffmpeg -i 1.mp4 -vn -c:a libvorbis -q:a 4 output1.ogg
+//here I used 1.mp4 as my file name then again to output1...
+you can use any name depending on your file_name
+
+//Extractings only a portion of the audio from a video
+ffmpeg -i myvideo.mp4 -ss 00:00:00 -t 00:00:00.0 -vn -acodec copy audio.ogg
+  //where: The -acodec flag will set the output audio codec to vorbis.
+  //-ss is the start of the extracted audio timestamp, and -t is the audio duration.
+  //Example: ffmpeg -i myvideo.mp4 -ss 00:02:00 -t 00:00:30.0 -vn -acodec copy audio.ogg
