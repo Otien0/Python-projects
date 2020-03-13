@@ -1,0 +1,204 @@
+<BtnC@Button>:
+    size_hint_x: None
+    width: dp(50)
+
+<TextInputD@TextInput>:
+    canvas.after:
+        Color:
+            rgba: 0,0,0,.83
+
+        Line:
+            rectangle: self.x, self.y, self.width,self.height
+            
+    padding: dp(8),dp(16),dp(16),0
+    size_hint_y: None
+    height: dp(50)
+    multiline: False
+    hint_text_color: 0,0,0,.63
+    cursor_color: 0,0,0,1
+    background_normal: ''
+    background_color: 0,0,0,.1
+    foreground_color: 0,0,0,1
+
+<Body>:
+    canvas:
+        Color:
+            rgba: 1,1,1,1
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    orientation: 'vertical'
+    spacing: dp(16)
+    padding: dp(8),dp(8),dp(8),dp(8)
+
+    Label:   
+        text: 'CASABLANCA HOTEL'
+        text_size: self.size
+        halign: 'center'
+        color: 0,0,0,1
+        size_hint_y: None
+        height: dp(30)
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(50)
+        spacing: dp(0)
+
+        TextInputD:
+            hint_text: 'Search for record by name, address e.t.c.'
+            
+            
+        Button:
+            text: 'Search'
+            size_hint: None, None
+            size: dp(100), dp(50)
+            
+    BoxLayout:
+        spacing: dp(8)
+
+        BoxLayout:
+            canvas:
+                Color:
+                    rgba: 1,1,0,0
+
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+                Line:
+                    rectangle: self.x, self.y, self.width, self.height
+                    
+            orientation: 'vertical'
+            spacing: dp(8)
+            padding: dp(8),dp(0),dp(8),dp(8)
+
+            BoxLayout:
+                size_hint_y: None
+                orientation: 'vertical'
+                height: dp(30)
+                spacing: dp(4)
+
+                BoxLayout:
+                    Label:
+                        text: 'Form'
+                        text_size: self.size
+                        halign: 'left'
+                        color: 0,0,0,.63
+
+                BoxLayout:
+                    canvas:
+                        Color:
+                            rgba: 0,0,0,.3
+
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    size_hint:1, None
+                    height: dp(1)
+                    pos_hint:{'center_y':.5}
+        
+            TextInputD:
+                id: txtname
+                hint_text: 'Enter name'
+                on_text_validate: txtaddress.focus=True
+            TextInputD:
+                id: txtaddress
+                hint_text: 'Enter Address'
+                on_text_validate: txtphno.focus=True
+            TextInputD:
+                id: txtphno
+                hint_text: 'Enter phone number'
+                on_text_validate: txtnodays.focus=True
+            TextInputD:
+                id: txtnodays
+                hint_text: 'Enter No. of days'
+                on_text_validate: txttype.focus=True
+            TextInputD:
+                id: txttype
+                hint_text: 'Room type(King, Normal, Delux)'
+                on_text_validate: root.add_record()
+                on_text_validate: txtname.focus=True
+                
+            Label:
+                id: lbl
+                text: 'Total cash: '
+                text_size: self.size
+                halign: 'left'
+                size_hint_y: None
+                height: dp(30)
+                color: 0,0,0,.63
+                
+            BoxLayout:
+                
+            BoxLayout:
+                size_hint_y: None
+                height: dp(46)
+                size_hint_x: None
+                width: dp(316)
+                pos_hint:{'center_x':.5}
+                padding: dp(8),dp(8),dp(8),dp(8)
+
+                BtnC:
+                    text: '|<'
+                BtnC:
+                    text: '<<'
+                BtnC:
+                    text: '+'
+                    on_press: root.add_record()
+                BtnC:
+                    text: '-'
+                BtnC:
+                    text: '>>'
+                BtnC:
+                    text: '>|'
+
+                
+
+        BoxLayout:
+            orientation: 'vertical'
+            BoxLayout:
+                size_hint_y: None
+                orientation: 'vertical'
+                height: dp(30)
+                spacing: dp(4)
+
+                BoxLayout:
+                    Label:
+                        text: 'View'
+                        text_size: self.size
+                        halign: 'left'
+                        color: 0,0,0,.63
+
+                    Button:
+                        text: 'View All'
+                        size_hint: None, 1
+                        width: dp(80)
+                BoxLayout:
+                    canvas:
+                        Color:
+                            rgba: 0,0,0,.3
+
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                    size_hint:1, None
+                    height: dp(1)
+                    pos_hint:{'center_y':.5}
+                
+                    
+            ScrollView:
+                BoxLayout:
+                    id: box
+                    size_hint_y: None
+                    height: self.minimum_height
+                    
+
+        
+            
+                
+
+            
+
+        
