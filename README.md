@@ -1,4 +1,4 @@
 # Python-projects
-some of my python intermediate and advance learning projects 
+some of my python on beginner, and intermediate learning projects 
 
-#using GUI modules: tkinter, kyvy and pyQt
+#using GUI modules: tkinter, kivy and pyQt5
